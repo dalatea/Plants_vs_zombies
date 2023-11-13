@@ -7,7 +7,7 @@
 class Keyboard
 {
 private:
-	Key _key;
+	Key _key; //текущая нажатая клавиша
 public:
 	Keyboard(Key key = Key::Nothing) : _key(key) {};
 	void read_key();//чтение клавиши с клавиатуры

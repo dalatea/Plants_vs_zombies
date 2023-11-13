@@ -1,10 +1,10 @@
-class Control
+class Game_control
 {
-protected:
-	int _x; //где находится курсор
-	int _y;
+private:
+	*User_input input;
+	*Graphics graphics;
+	*Field field;
 public:
-	Control(int x = 0, int y = 0) : _x(x), _y(y) {};
-	virtual void key_control() = 0;
-	virtual ~Control();
+	void run();
+	int step();
 };

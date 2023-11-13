@@ -14,13 +14,13 @@
 class Game
 {
 private:
-	
+	Settings _settings;
 	unsigned highest_score;
     	unsigned death_score;
 	unsigned level_number;
 	int currency;
-	std::string User_name;
 public:
+	Game(Settings set) : _settings(set) {};
 	int game_menu();
 	//int start_game(bool); //int start_game(bool);
 	int start_level(unsigned);

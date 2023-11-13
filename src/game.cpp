@@ -18,7 +18,7 @@ int Game::game_menu()
     }
     
     cout << "Write your name\n";
-    cin >> User_NAME;
+    cin >> _settings.User_NAME_;
     
     return level_number;
         
@@ -34,9 +34,7 @@ int Game::start_game()
 	struct winsize ws;
 	ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws); //получаем текущий размер терминала
 	if (ws.ws_row < 50 or ws.ws_col < 100)
-		//cout << term_size(50, 100); //устанавливаем минимальный размер, если окно меньше
-		//system("resize -s 50 100");
-		cout << "\e[8;40;150t";  //у меня не работает терм сайз поэтому юзаю через cout изменение терминала
+		cout << term_size(50, 100); //устанавливаем минимальный размер, если окно меньше
 	cout << "\033[2J"; //system("clear");
 	cout << CUP(1,1);
 	
@@ -58,19 +56,19 @@ int Game::start_game()
 	
 	originalSettings = key_contr.kbin();
 	
-	Scope_plants = (level_number * 6) * 2 / 3;
+	_settings.Scope_plants_ = (level_number * 6) * 2 / 3;
 	
-	cout << CUP(term_lenght / 2 - 4, 12) << User_NAME;
+	cout << CUP(_settings.term_lenght_ / 2 - 4, 12) << _settings.User_NAME_;
 	
-	cout <<	CUP(term_lenght / 2 - 8, 1);
+	cout <<	CUP(_settings.term_lenght_ / 2 - 8, 1);
 	cout << "You can put this many plants: ";
-	cout << Scope_plants;
+	cout << _settings.Scope_plants_;
 	cout << CUP(1,1);
-	while ((gameRunning) or (Scope_plants > 0))
+	while ((gameRunning) or (_settings.Scope_plants_ > 0))
 	{
 		user.key_control();
 	}
-	cout  << CUP(term_lenght / 2 - 7, 1) << "\033[K"; 	
+	cout  << CUP(_settings.term_lenght_ / 2 - 7, 1) << "\033[K"; 	
 	user.start();
 	return 0;
 }
@@ -99,9 +97,9 @@ void Game::END(bool code)
 {
 	//Field field(6, level_number);
 	if(code)
-		cout << SGR((int)Color::RESET) << CUP(term_lenght / 2 - 8, 1) << "GAME OVER. ZOMBIE WINS";
+		cout << SGR((int)Color::RESET) << CUP(_settings.term_lenght_ / 2 - 8, 1) << "GAME OVER. ZOMBIE WINS";
 	else
-		cout << SGR((int)Color::RESET) << CUP(term_lenght / 2 - 8, 1) << "GAME OVER. PLANTS WINS";
+		cout << SGR((int)Color::RESET) << CUP(_settings.term_lenght_ / 2 - 8, 1) << "GAME OVER. PLANTS WINS";
 	
 	//field.print();
 	

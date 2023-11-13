@@ -13,7 +13,7 @@ termios Keyboard::kbin()
 	return oldSettings;
 }
 
-void Keyboard::read_key()
+void Keyboard::read_key() //считывание с клавиатуры, сохраняем клавишу в поле _key
 {
 	char input;
 	input = getchar();

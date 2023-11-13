@@ -2,6 +2,7 @@
 
 int main()
 {
-	Game n;
+	Settings set;
+	Game n(set);
 	n.start_game();
 }
