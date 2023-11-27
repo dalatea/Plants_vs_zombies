@@ -1,19 +1,34 @@
 #include "keyboard.h"
 
-termios Keyboard::kbin()
+Keyboard::Keyboard(Current_key* key)
+{
+	term_set();
+	pressed_key = key;
+	pressed_key->_key = Key::Nothing;
+}
+
+void Keyboard::term_set()
 {
 	char symb;
-	struct termios oldSettings, newSettings; //нужна для того, чтобы программа не ждала enter для реагирования на ввод
-	tcgetattr(0, &oldSettings); //сохраняем характеристики стандартного терминала
-	newSettings = oldSettings;
+	struct termios newSettings; //нужна для того, чтобы программа не ждала enter для реагирования на ввод
+	tcgetattr(0, &_oldSettings); //сохраняем характеристики стандартного терминала
+	newSettings = _oldSettings;
 	newSettings.c_lflag &= ~(ICANON | ECHO); // ~ICANON отключает ожидание enter, ~ECHO отключает вывод символов функцией getchar
 	tcsetattr(0, TCSANOW, &newSettings); 
 	int flags = fcntl(0, F_GETFL);
 	fcntl(0, F_SETFL, flags | O_NONBLOCK);	
-	return oldSettings;
 }
 
+<<<<<<< HEAD
 void Keyboard::read_key()
+=======
+void Keyboard::term_unset()
+{
+	tcsetattr(STDIN_FILENO, TCSANOW, &_oldSettings);
+}
+
+void Keyboard::read_key() //считывание с клавиатуры, сохраняем клавишу в структуру Current_key
+>>>>>>> 8dd86ec ("version 2.0")
 {
 	char input;
 	input = getchar();
@@ -21,26 +36,36 @@ void Keyboard::read_key()
 	{
 		switch (tolower(input)){
 			case 0:
-				_key = Key::Nothing;
+				pressed_key->_key = Key::Nothing;
 				break;
 			case 'w':
-				_key = Key::Up;
+				pressed_key->_key = Key::Up;
 				break;
 			case 'a':
-				_key = Key::Left;
+				pressed_key->_key = Key::Left;
 				break;
 			case 'd':
-				_key = Key::Right;
+				pressed_key->_key = Key::Right;
 				break;
 			case 's':
-				_key = Key::Down;
+				pressed_key->_key = Key::Down;
 				break;
 			case 32:
-				_key = Key::Space;
+				pressed_key->_key = Key::Space;
 				break;
 			case '\n':
-				_key = Key::Enter;
+				pressed_key->_key = Key::Enter;
 				break;
 		}
 	}
+}
+
+void Keyboard::default_key()
+{
+	pressed_key->_key = Key::Nothing;
+}
+
+Keyboard::~Keyboard()
+{
+	term_unset();
 }

@@ -10,18 +10,12 @@ include_directories(include)
 
 add_executable(
 	Project
+	src/settings.cpp
 	src/escape.cpp
 	src/graphics.cpp
-	src/field.cpp
 	src/keyboard.cpp
-	src/objects.cpp
-	src/rules.cpp
-	src/game.cpp
-	src/user.cpp
-	src/zombie.cpp
-	src/main.cpp
-	src/plants.cpp
-	src/bullet.cpp
+	src/field_model.cpp
+	src/field_view.cpp
+	src/control.cpp
 )
-
 

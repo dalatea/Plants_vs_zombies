@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/Project.dir/src/settings.cpp.o CMakeFiles/Project.dir/src/escape.cpp.o CMakeFiles/Project.dir/src/graphics.cpp.o CMakeFiles/Project.dir/src/keyboard.cpp.o CMakeFiles/Project.dir/src/field_model.cpp.o CMakeFiles/Project.dir/src/field_view.cpp.o CMakeFiles/Project.dir/src/control.cpp.o -o Project 
