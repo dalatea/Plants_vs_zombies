@@ -48,10 +48,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/cmake/1336/bin/cmake
+CMAKE_COMMAND = /snap/cmake/1345/bin/cmake
 
 # The command to remove a file.
-RM = /snap/cmake/1336/bin/cmake -E rm -f
+RM = /snap/cmake/1345/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/dilyara/Project/build
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
-	/snap/cmake/1336/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/cmake/1345/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/snap/cmake/1336/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/cmake/1345/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -129,29 +129,29 @@ Project/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/build
 .PHONY : Project/fast
 
-src/bullet.o: src/bullet.cpp.o
-.PHONY : src/bullet.o
+src/control.o: src/control.cpp.o
+.PHONY : src/control.o
 
 # target to build an object file
-src/bullet.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/bullet.cpp.o
-.PHONY : src/bullet.cpp.o
+src/control.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/control.cpp.o
+.PHONY : src/control.cpp.o
 
-src/bullet.i: src/bullet.cpp.i
-.PHONY : src/bullet.i
+src/control.i: src/control.cpp.i
+.PHONY : src/control.i
 
 # target to preprocess a source file
-src/bullet.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/bullet.cpp.i
-.PHONY : src/bullet.cpp.i
+src/control.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/control.cpp.i
+.PHONY : src/control.cpp.i
 
-src/bullet.s: src/bullet.cpp.s
-.PHONY : src/bullet.s
+src/control.s: src/control.cpp.s
+.PHONY : src/control.s
 
 # target to generate assembly for a file
-src/bullet.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/bullet.cpp.s
-.PHONY : src/bullet.cpp.s
+src/control.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/control.cpp.s
+.PHONY : src/control.cpp.s
 
 src/escape.o: src/escape.cpp.o
 .PHONY : src/escape.o
@@ -177,53 +177,53 @@ src/escape.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/escape.cpp.s
 .PHONY : src/escape.cpp.s
 
-src/field.o: src/field.cpp.o
-.PHONY : src/field.o
+src/field_model.o: src/field_model.cpp.o
+.PHONY : src/field_model.o
 
 # target to build an object file
-src/field.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/field.cpp.o
-.PHONY : src/field.cpp.o
+src/field_model.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/field_model.cpp.o
+.PHONY : src/field_model.cpp.o
 
-src/field.i: src/field.cpp.i
-.PHONY : src/field.i
+src/field_model.i: src/field_model.cpp.i
+.PHONY : src/field_model.i
 
 # target to preprocess a source file
-src/field.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/field.cpp.i
-.PHONY : src/field.cpp.i
+src/field_model.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/field_model.cpp.i
+.PHONY : src/field_model.cpp.i
 
-src/field.s: src/field.cpp.s
-.PHONY : src/field.s
+src/field_model.s: src/field_model.cpp.s
+.PHONY : src/field_model.s
 
 # target to generate assembly for a file
-src/field.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/field.cpp.s
-.PHONY : src/field.cpp.s
+src/field_model.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/field_model.cpp.s
+.PHONY : src/field_model.cpp.s
 
-src/game.o: src/game.cpp.o
-.PHONY : src/game.o
+src/field_view.o: src/field_view.cpp.o
+.PHONY : src/field_view.o
 
 # target to build an object file
-src/game.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/game.cpp.o
-.PHONY : src/game.cpp.o
+src/field_view.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/field_view.cpp.o
+.PHONY : src/field_view.cpp.o
 
-src/game.i: src/game.cpp.i
-.PHONY : src/game.i
+src/field_view.i: src/field_view.cpp.i
+.PHONY : src/field_view.i
 
 # target to preprocess a source file
-src/game.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/game.cpp.i
-.PHONY : src/game.cpp.i
+src/field_view.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/field_view.cpp.i
+.PHONY : src/field_view.cpp.i
 
-src/game.s: src/game.cpp.s
-.PHONY : src/game.s
+src/field_view.s: src/field_view.cpp.s
+.PHONY : src/field_view.s
 
 # target to generate assembly for a file
-src/game.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/game.cpp.s
-.PHONY : src/game.cpp.s
+src/field_view.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/field_view.cpp.s
+.PHONY : src/field_view.cpp.s
 
 src/graphics.o: src/graphics.cpp.o
 .PHONY : src/graphics.o
@@ -273,149 +273,29 @@ src/keyboard.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/keyboard.cpp.s
 .PHONY : src/keyboard.cpp.s
 
-src/main.o: src/main.cpp.o
-.PHONY : src/main.o
+src/settings.o: src/settings.cpp.o
+.PHONY : src/settings.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/settings.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/settings.cpp.o
+.PHONY : src/settings.cpp.o
 
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
-
-# target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
-
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
-
-# target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
-
-src/objects.o: src/objects.cpp.o
-.PHONY : src/objects.o
-
-# target to build an object file
-src/objects.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/objects.cpp.o
-.PHONY : src/objects.cpp.o
-
-src/objects.i: src/objects.cpp.i
-.PHONY : src/objects.i
+src/settings.i: src/settings.cpp.i
+.PHONY : src/settings.i
 
 # target to preprocess a source file
-src/objects.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/objects.cpp.i
-.PHONY : src/objects.cpp.i
+src/settings.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/settings.cpp.i
+.PHONY : src/settings.cpp.i
 
-src/objects.s: src/objects.cpp.s
-.PHONY : src/objects.s
-
-# target to generate assembly for a file
-src/objects.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/objects.cpp.s
-.PHONY : src/objects.cpp.s
-
-src/plants.o: src/plants.cpp.o
-.PHONY : src/plants.o
-
-# target to build an object file
-src/plants.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/plants.cpp.o
-.PHONY : src/plants.cpp.o
-
-src/plants.i: src/plants.cpp.i
-.PHONY : src/plants.i
-
-# target to preprocess a source file
-src/plants.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/plants.cpp.i
-.PHONY : src/plants.cpp.i
-
-src/plants.s: src/plants.cpp.s
-.PHONY : src/plants.s
+src/settings.s: src/settings.cpp.s
+.PHONY : src/settings.s
 
 # target to generate assembly for a file
-src/plants.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/plants.cpp.s
-.PHONY : src/plants.cpp.s
-
-src/rules.o: src/rules.cpp.o
-.PHONY : src/rules.o
-
-# target to build an object file
-src/rules.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/rules.cpp.o
-.PHONY : src/rules.cpp.o
-
-src/rules.i: src/rules.cpp.i
-.PHONY : src/rules.i
-
-# target to preprocess a source file
-src/rules.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/rules.cpp.i
-.PHONY : src/rules.cpp.i
-
-src/rules.s: src/rules.cpp.s
-.PHONY : src/rules.s
-
-# target to generate assembly for a file
-src/rules.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/rules.cpp.s
-.PHONY : src/rules.cpp.s
-
-src/user.o: src/user.cpp.o
-.PHONY : src/user.o
-
-# target to build an object file
-src/user.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/user.cpp.o
-.PHONY : src/user.cpp.o
-
-src/user.i: src/user.cpp.i
-.PHONY : src/user.i
-
-# target to preprocess a source file
-src/user.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/user.cpp.i
-.PHONY : src/user.cpp.i
-
-src/user.s: src/user.cpp.s
-.PHONY : src/user.s
-
-# target to generate assembly for a file
-src/user.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/user.cpp.s
-.PHONY : src/user.cpp.s
-
-src/zombie.o: src/zombie.cpp.o
-.PHONY : src/zombie.o
-
-# target to build an object file
-src/zombie.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/zombie.cpp.o
-.PHONY : src/zombie.cpp.o
-
-src/zombie.i: src/zombie.cpp.i
-.PHONY : src/zombie.i
-
-# target to preprocess a source file
-src/zombie.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/zombie.cpp.i
-.PHONY : src/zombie.cpp.i
-
-src/zombie.s: src/zombie.cpp.s
-.PHONY : src/zombie.s
-
-# target to generate assembly for a file
-src/zombie.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/zombie.cpp.s
-.PHONY : src/zombie.cpp.s
+src/settings.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/settings.cpp.s
+.PHONY : src/settings.cpp.s
 
 # Help Target
 help:
@@ -426,42 +306,27 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Project"
-	@echo "... src/bullet.o"
-	@echo "... src/bullet.i"
-	@echo "... src/bullet.s"
+	@echo "... src/control.o"
+	@echo "... src/control.i"
+	@echo "... src/control.s"
 	@echo "... src/escape.o"
 	@echo "... src/escape.i"
 	@echo "... src/escape.s"
-	@echo "... src/field.o"
-	@echo "... src/field.i"
-	@echo "... src/field.s"
-	@echo "... src/game.o"
-	@echo "... src/game.i"
-	@echo "... src/game.s"
+	@echo "... src/field_model.o"
+	@echo "... src/field_model.i"
+	@echo "... src/field_model.s"
+	@echo "... src/field_view.o"
+	@echo "... src/field_view.i"
+	@echo "... src/field_view.s"
 	@echo "... src/graphics.o"
 	@echo "... src/graphics.i"
 	@echo "... src/graphics.s"
 	@echo "... src/keyboard.o"
 	@echo "... src/keyboard.i"
 	@echo "... src/keyboard.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
-	@echo "... src/objects.o"
-	@echo "... src/objects.i"
-	@echo "... src/objects.s"
-	@echo "... src/plants.o"
-	@echo "... src/plants.i"
-	@echo "... src/plants.s"
-	@echo "... src/rules.o"
-	@echo "... src/rules.i"
-	@echo "... src/rules.s"
-	@echo "... src/user.o"
-	@echo "... src/user.i"
-	@echo "... src/user.s"
-	@echo "... src/zombie.o"
-	@echo "... src/zombie.i"
-	@echo "... src/zombie.s"
+	@echo "... src/settings.o"
+	@echo "... src/settings.i"
+	@echo "... src/settings.s"
 .PHONY : help
 
 

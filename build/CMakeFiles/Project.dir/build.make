@@ -44,10 +44,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/cmake/1336/bin/cmake
+CMAKE_COMMAND = /snap/cmake/1345/bin/cmake
 
 # The command to remove a file.
-RM = /snap/cmake/1336/bin/cmake -E rm -f
+RM = /snap/cmake/1345/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -69,10 +69,24 @@ include CMakeFiles/Project.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Project.dir/flags.make
 
+CMakeFiles/Project.dir/src/settings.cpp.o: CMakeFiles/Project.dir/flags.make
+CMakeFiles/Project.dir/src/settings.cpp.o: /home/dilyara/Project/src/settings.cpp
+CMakeFiles/Project.dir/src/settings.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dilyara/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Project.dir/src/settings.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/src/settings.cpp.o -MF CMakeFiles/Project.dir/src/settings.cpp.o.d -o CMakeFiles/Project.dir/src/settings.cpp.o -c /home/dilyara/Project/src/settings.cpp
+
+CMakeFiles/Project.dir/src/settings.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/src/settings.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dilyara/Project/src/settings.cpp > CMakeFiles/Project.dir/src/settings.cpp.i
+
+CMakeFiles/Project.dir/src/settings.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/settings.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dilyara/Project/src/settings.cpp -o CMakeFiles/Project.dir/src/settings.cpp.s
+
 CMakeFiles/Project.dir/src/escape.cpp.o: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/src/escape.cpp.o: /home/dilyara/Project/src/escape.cpp
 CMakeFiles/Project.dir/src/escape.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dilyara/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Project.dir/src/escape.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dilyara/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Project.dir/src/escape.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/src/escape.cpp.o -MF CMakeFiles/Project.dir/src/escape.cpp.o.d -o CMakeFiles/Project.dir/src/escape.cpp.o -c /home/dilyara/Project/src/escape.cpp
 
 CMakeFiles/Project.dir/src/escape.cpp.i: cmake_force
@@ -86,7 +100,7 @@ CMakeFiles/Project.dir/src/escape.cpp.s: cmake_force
 CMakeFiles/Project.dir/src/graphics.cpp.o: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/src/graphics.cpp.o: /home/dilyara/Project/src/graphics.cpp
 CMakeFiles/Project.dir/src/graphics.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dilyara/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Project.dir/src/graphics.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dilyara/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Project.dir/src/graphics.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/src/graphics.cpp.o -MF CMakeFiles/Project.dir/src/graphics.cpp.o.d -o CMakeFiles/Project.dir/src/graphics.cpp.o -c /home/dilyara/Project/src/graphics.cpp
 
 CMakeFiles/Project.dir/src/graphics.cpp.i: cmake_force
@@ -96,20 +110,6 @@ CMakeFiles/Project.dir/src/graphics.cpp.i: cmake_force
 CMakeFiles/Project.dir/src/graphics.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/graphics.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dilyara/Project/src/graphics.cpp -o CMakeFiles/Project.dir/src/graphics.cpp.s
-
-CMakeFiles/Project.dir/src/field.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/src/field.cpp.o: /home/dilyara/Project/src/field.cpp
-CMakeFiles/Project.dir/src/field.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dilyara/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Project.dir/src/field.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/src/field.cpp.o -MF CMakeFiles/Project.dir/src/field.cpp.o.d -o CMakeFiles/Project.dir/src/field.cpp.o -c /home/dilyara/Project/src/field.cpp
-
-CMakeFiles/Project.dir/src/field.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/src/field.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dilyara/Project/src/field.cpp > CMakeFiles/Project.dir/src/field.cpp.i
-
-CMakeFiles/Project.dir/src/field.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/field.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dilyara/Project/src/field.cpp -o CMakeFiles/Project.dir/src/field.cpp.s
 
 CMakeFiles/Project.dir/src/keyboard.cpp.o: CMakeFiles/Project.dir/flags.make
 CMakeFiles/Project.dir/src/keyboard.cpp.o: /home/dilyara/Project/src/keyboard.cpp
@@ -125,151 +125,71 @@ CMakeFiles/Project.dir/src/keyboard.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/keyboard.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dilyara/Project/src/keyboard.cpp -o CMakeFiles/Project.dir/src/keyboard.cpp.s
 
-CMakeFiles/Project.dir/src/objects.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/src/objects.cpp.o: /home/dilyara/Project/src/objects.cpp
-CMakeFiles/Project.dir/src/objects.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dilyara/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Project.dir/src/objects.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/src/objects.cpp.o -MF CMakeFiles/Project.dir/src/objects.cpp.o.d -o CMakeFiles/Project.dir/src/objects.cpp.o -c /home/dilyara/Project/src/objects.cpp
+CMakeFiles/Project.dir/src/field_model.cpp.o: CMakeFiles/Project.dir/flags.make
+CMakeFiles/Project.dir/src/field_model.cpp.o: /home/dilyara/Project/src/field_model.cpp
+CMakeFiles/Project.dir/src/field_model.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dilyara/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Project.dir/src/field_model.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/src/field_model.cpp.o -MF CMakeFiles/Project.dir/src/field_model.cpp.o.d -o CMakeFiles/Project.dir/src/field_model.cpp.o -c /home/dilyara/Project/src/field_model.cpp
 
-CMakeFiles/Project.dir/src/objects.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/src/objects.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dilyara/Project/src/objects.cpp > CMakeFiles/Project.dir/src/objects.cpp.i
+CMakeFiles/Project.dir/src/field_model.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/src/field_model.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dilyara/Project/src/field_model.cpp > CMakeFiles/Project.dir/src/field_model.cpp.i
 
-CMakeFiles/Project.dir/src/objects.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/objects.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dilyara/Project/src/objects.cpp -o CMakeFiles/Project.dir/src/objects.cpp.s
+CMakeFiles/Project.dir/src/field_model.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/field_model.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dilyara/Project/src/field_model.cpp -o CMakeFiles/Project.dir/src/field_model.cpp.s
 
-CMakeFiles/Project.dir/src/rules.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/src/rules.cpp.o: /home/dilyara/Project/src/rules.cpp
-CMakeFiles/Project.dir/src/rules.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dilyara/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Project.dir/src/rules.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/src/rules.cpp.o -MF CMakeFiles/Project.dir/src/rules.cpp.o.d -o CMakeFiles/Project.dir/src/rules.cpp.o -c /home/dilyara/Project/src/rules.cpp
+CMakeFiles/Project.dir/src/field_view.cpp.o: CMakeFiles/Project.dir/flags.make
+CMakeFiles/Project.dir/src/field_view.cpp.o: /home/dilyara/Project/src/field_view.cpp
+CMakeFiles/Project.dir/src/field_view.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dilyara/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Project.dir/src/field_view.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/src/field_view.cpp.o -MF CMakeFiles/Project.dir/src/field_view.cpp.o.d -o CMakeFiles/Project.dir/src/field_view.cpp.o -c /home/dilyara/Project/src/field_view.cpp
 
-CMakeFiles/Project.dir/src/rules.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/src/rules.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dilyara/Project/src/rules.cpp > CMakeFiles/Project.dir/src/rules.cpp.i
+CMakeFiles/Project.dir/src/field_view.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/src/field_view.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dilyara/Project/src/field_view.cpp > CMakeFiles/Project.dir/src/field_view.cpp.i
 
-CMakeFiles/Project.dir/src/rules.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/rules.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dilyara/Project/src/rules.cpp -o CMakeFiles/Project.dir/src/rules.cpp.s
+CMakeFiles/Project.dir/src/field_view.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/field_view.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dilyara/Project/src/field_view.cpp -o CMakeFiles/Project.dir/src/field_view.cpp.s
 
-CMakeFiles/Project.dir/src/game.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/src/game.cpp.o: /home/dilyara/Project/src/game.cpp
-CMakeFiles/Project.dir/src/game.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dilyara/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Project.dir/src/game.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/src/game.cpp.o -MF CMakeFiles/Project.dir/src/game.cpp.o.d -o CMakeFiles/Project.dir/src/game.cpp.o -c /home/dilyara/Project/src/game.cpp
+CMakeFiles/Project.dir/src/control.cpp.o: CMakeFiles/Project.dir/flags.make
+CMakeFiles/Project.dir/src/control.cpp.o: /home/dilyara/Project/src/control.cpp
+CMakeFiles/Project.dir/src/control.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dilyara/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Project.dir/src/control.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/src/control.cpp.o -MF CMakeFiles/Project.dir/src/control.cpp.o.d -o CMakeFiles/Project.dir/src/control.cpp.o -c /home/dilyara/Project/src/control.cpp
 
-CMakeFiles/Project.dir/src/game.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/src/game.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dilyara/Project/src/game.cpp > CMakeFiles/Project.dir/src/game.cpp.i
+CMakeFiles/Project.dir/src/control.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/src/control.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dilyara/Project/src/control.cpp > CMakeFiles/Project.dir/src/control.cpp.i
 
-CMakeFiles/Project.dir/src/game.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/game.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dilyara/Project/src/game.cpp -o CMakeFiles/Project.dir/src/game.cpp.s
-
-CMakeFiles/Project.dir/src/user.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/src/user.cpp.o: /home/dilyara/Project/src/user.cpp
-CMakeFiles/Project.dir/src/user.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dilyara/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Project.dir/src/user.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/src/user.cpp.o -MF CMakeFiles/Project.dir/src/user.cpp.o.d -o CMakeFiles/Project.dir/src/user.cpp.o -c /home/dilyara/Project/src/user.cpp
-
-CMakeFiles/Project.dir/src/user.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/src/user.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dilyara/Project/src/user.cpp > CMakeFiles/Project.dir/src/user.cpp.i
-
-CMakeFiles/Project.dir/src/user.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/user.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dilyara/Project/src/user.cpp -o CMakeFiles/Project.dir/src/user.cpp.s
-
-CMakeFiles/Project.dir/src/zombie.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/src/zombie.cpp.o: /home/dilyara/Project/src/zombie.cpp
-CMakeFiles/Project.dir/src/zombie.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dilyara/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Project.dir/src/zombie.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/src/zombie.cpp.o -MF CMakeFiles/Project.dir/src/zombie.cpp.o.d -o CMakeFiles/Project.dir/src/zombie.cpp.o -c /home/dilyara/Project/src/zombie.cpp
-
-CMakeFiles/Project.dir/src/zombie.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/src/zombie.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dilyara/Project/src/zombie.cpp > CMakeFiles/Project.dir/src/zombie.cpp.i
-
-CMakeFiles/Project.dir/src/zombie.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/zombie.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dilyara/Project/src/zombie.cpp -o CMakeFiles/Project.dir/src/zombie.cpp.s
-
-CMakeFiles/Project.dir/src/main.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/src/main.cpp.o: /home/dilyara/Project/src/main.cpp
-CMakeFiles/Project.dir/src/main.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dilyara/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Project.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/src/main.cpp.o -MF CMakeFiles/Project.dir/src/main.cpp.o.d -o CMakeFiles/Project.dir/src/main.cpp.o -c /home/dilyara/Project/src/main.cpp
-
-CMakeFiles/Project.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dilyara/Project/src/main.cpp > CMakeFiles/Project.dir/src/main.cpp.i
-
-CMakeFiles/Project.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dilyara/Project/src/main.cpp -o CMakeFiles/Project.dir/src/main.cpp.s
-
-CMakeFiles/Project.dir/src/plants.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/src/plants.cpp.o: /home/dilyara/Project/src/plants.cpp
-CMakeFiles/Project.dir/src/plants.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dilyara/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Project.dir/src/plants.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/src/plants.cpp.o -MF CMakeFiles/Project.dir/src/plants.cpp.o.d -o CMakeFiles/Project.dir/src/plants.cpp.o -c /home/dilyara/Project/src/plants.cpp
-
-CMakeFiles/Project.dir/src/plants.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/src/plants.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dilyara/Project/src/plants.cpp > CMakeFiles/Project.dir/src/plants.cpp.i
-
-CMakeFiles/Project.dir/src/plants.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/plants.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dilyara/Project/src/plants.cpp -o CMakeFiles/Project.dir/src/plants.cpp.s
-
-CMakeFiles/Project.dir/src/bullet.cpp.o: CMakeFiles/Project.dir/flags.make
-CMakeFiles/Project.dir/src/bullet.cpp.o: /home/dilyara/Project/src/bullet.cpp
-CMakeFiles/Project.dir/src/bullet.cpp.o: CMakeFiles/Project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dilyara/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Project.dir/src/bullet.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project.dir/src/bullet.cpp.o -MF CMakeFiles/Project.dir/src/bullet.cpp.o.d -o CMakeFiles/Project.dir/src/bullet.cpp.o -c /home/dilyara/Project/src/bullet.cpp
-
-CMakeFiles/Project.dir/src/bullet.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project.dir/src/bullet.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dilyara/Project/src/bullet.cpp > CMakeFiles/Project.dir/src/bullet.cpp.i
-
-CMakeFiles/Project.dir/src/bullet.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/bullet.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dilyara/Project/src/bullet.cpp -o CMakeFiles/Project.dir/src/bullet.cpp.s
+CMakeFiles/Project.dir/src/control.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project.dir/src/control.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dilyara/Project/src/control.cpp -o CMakeFiles/Project.dir/src/control.cpp.s
 
 # Object files for target Project
 Project_OBJECTS = \
+"CMakeFiles/Project.dir/src/settings.cpp.o" \
 "CMakeFiles/Project.dir/src/escape.cpp.o" \
 "CMakeFiles/Project.dir/src/graphics.cpp.o" \
-"CMakeFiles/Project.dir/src/field.cpp.o" \
 "CMakeFiles/Project.dir/src/keyboard.cpp.o" \
-"CMakeFiles/Project.dir/src/objects.cpp.o" \
-"CMakeFiles/Project.dir/src/rules.cpp.o" \
-"CMakeFiles/Project.dir/src/game.cpp.o" \
-"CMakeFiles/Project.dir/src/user.cpp.o" \
-"CMakeFiles/Project.dir/src/zombie.cpp.o" \
-"CMakeFiles/Project.dir/src/main.cpp.o" \
-"CMakeFiles/Project.dir/src/plants.cpp.o" \
-"CMakeFiles/Project.dir/src/bullet.cpp.o"
+"CMakeFiles/Project.dir/src/field_model.cpp.o" \
+"CMakeFiles/Project.dir/src/field_view.cpp.o" \
+"CMakeFiles/Project.dir/src/control.cpp.o"
 
 # External object files for target Project
 Project_EXTERNAL_OBJECTS =
 
+Project: CMakeFiles/Project.dir/src/settings.cpp.o
 Project: CMakeFiles/Project.dir/src/escape.cpp.o
 Project: CMakeFiles/Project.dir/src/graphics.cpp.o
-Project: CMakeFiles/Project.dir/src/field.cpp.o
 Project: CMakeFiles/Project.dir/src/keyboard.cpp.o
-Project: CMakeFiles/Project.dir/src/objects.cpp.o
-Project: CMakeFiles/Project.dir/src/rules.cpp.o
-Project: CMakeFiles/Project.dir/src/game.cpp.o
-Project: CMakeFiles/Project.dir/src/user.cpp.o
-Project: CMakeFiles/Project.dir/src/zombie.cpp.o
-Project: CMakeFiles/Project.dir/src/main.cpp.o
-Project: CMakeFiles/Project.dir/src/plants.cpp.o
-Project: CMakeFiles/Project.dir/src/bullet.cpp.o
+Project: CMakeFiles/Project.dir/src/field_model.cpp.o
+Project: CMakeFiles/Project.dir/src/field_view.cpp.o
+Project: CMakeFiles/Project.dir/src/control.cpp.o
 Project: CMakeFiles/Project.dir/build.make
 Project: CMakeFiles/Project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/dilyara/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable Project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/dilyara/Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Project"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

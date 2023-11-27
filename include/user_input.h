@@ -1,17 +1,13 @@
 #pragma once
 
-#include "keyboard.h"
-
-struct Current_key
-{
-	Key _key;
-};
+#include "settings.h"
 
 class User_input
 {
-private:
-	Current_key _pressed_key;
-	Keyboard _keyboard;
+protected:
+	Current_key* pressed_key;
 public:
-	Key key_control();
+	virtual void read_key() = 0;
+	virtual ~User_input() = default;
 };
+
