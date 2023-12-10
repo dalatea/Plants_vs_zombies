@@ -45,10 +45,15 @@ enum class Cell{ //перечисление того, что может нахо
 enum class Color{//перечисление кодов цветов
 	RED = 31,
 	GREEN = 32,
+	DARK_GREEN = 22,
 	WHITE = 37,
 	RESET = 0,
 	GREEN_BG = 42,
-	WHITE_BG = 47
+	YELLOW_BG = 11,
+	WHITE_BG = 47,
+	BLACK_BG = 40,
+	BROWN_BG = 43,
+	BLUE_BG = 46
 };
 
 enum class Steps{

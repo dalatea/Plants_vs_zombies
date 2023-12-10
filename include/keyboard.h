@@ -13,13 +13,9 @@
 
 class Keyboard : public User_input{
 private:
-<<<<<<< HEAD
-	Key _key;
-=======
 	struct termios _oldSettings; //начальные настройки терминала
 	void term_set();//настройка терминала перед вводом
 	void term_unset(); //настройка терминала после завершения программы
->>>>>>> 8dd86ec ("version 2.0")
 public:
 	Keyboard();
 	Keyboard(Current_key* key);

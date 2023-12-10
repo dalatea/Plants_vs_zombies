@@ -19,4 +19,5 @@ estream upCUP(int);
 estream downCUP(int);
 estream rightCUP(int);
 estream leftCUP(int);
+estream term_size(int cols, int rows);
 estream SGR(int);

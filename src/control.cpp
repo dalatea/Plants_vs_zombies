@@ -18,10 +18,12 @@ Game_control::Game_control()
 	cout << "\033[2J"; //system("clear");
 	cout << CUP(1,1);
 	
-	Graphics_mode g_mode = Graphics_mode::Symbol; //всё, что нужно для заполнения Settings
+	Graphics_mode g_mode = Graphics_mode::Escape; //всё, что нужно для заполнения Settings
 	level_number = level();
 	User_NAME = user_name();
-
+	
+	cout << "\033[?25l"; //спрятать курсор
+	
 	int plants = (level_number * 6) * 2 / 3;
 	
 	_set = new Settings(g_mode, ws.ws_col, ws.ws_row, level_number, plants, User_NAME);
@@ -131,6 +133,7 @@ void Game_control::move()
 
 Game_control::~Game_control()
 {
+	cout << SGR((int)Color::RESET);
 	cout << "\033[2J"; //system("clear");
 	cout << CUP(1,1);
 	delete _set;

@@ -19,16 +19,12 @@ void Keyboard::term_set()
 	fcntl(0, F_SETFL, flags | O_NONBLOCK);	
 }
 
-<<<<<<< HEAD
-void Keyboard::read_key()
-=======
 void Keyboard::term_unset()
 {
 	tcsetattr(STDIN_FILENO, TCSANOW, &_oldSettings);
 }
 
 void Keyboard::read_key() //считывание с клавиатуры, сохраняем клавишу в структуру Current_key
->>>>>>> 8dd86ec ("version 2.0")
 {
 	char input;
 	input = getchar();

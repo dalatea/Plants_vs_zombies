@@ -38,7 +38,19 @@ estream leftCUP(int x)
 estream SGR(int r)
 {
 	ostringstream sout;
-	sout << "\033[" << r << "m"; //перемещает курсор на x влево
+	if (r == 11)
+		sout << "\033[48;5;"<< r << "m";
+	else if(r == 22)
+		sout << "\033[38;5;"<< r << "m";
+	else
+		sout << "\033["<< r << "m"; 
+	return estream(sout.str());
+}
+
+estream term_size(int cols, int rows)
+{
+	ostringstream sout;
+	sout << "\033[8;" << cols << ';' << rows << "t"; //меняет размер терминала
 	return estream(sout.str());
 }
 

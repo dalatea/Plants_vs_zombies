@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-class Control
-{
-protected:
-	int _x; //где находится курсор
-	int _y;
-public:
-	Control(int x = 0, int y = 0) : _x(x), _y(y) {};
-	virtual void key_control() = 0;
-	virtual ~Control();
-=======
 #pragma once
 
 #include "graphics.h"
@@ -43,5 +32,4 @@ public:
 	void choose();
 	//static void end(int);
 	~Game_control();
->>>>>>> 8dd86ec ("version 2.0")
 };
