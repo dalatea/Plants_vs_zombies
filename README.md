@@ -7,6 +7,7 @@ In this game plants try to defeat zombies, who want to go through the field. Bef
 Program interface is implemented in UNIX console. There are two types of graphics: color and symbol.
 
 ## Showcase
+[Запись экрана от 30.01.2024 13:36:38.webm](https://github.com/dalatea/Plants_vs_zombies/assets/148526614/038f8ce6-d886-43ac-957d-c5195999239e)
 
 
 ## Installation
