@@ -180,6 +180,7 @@ void Graphics_Esc::draw_zombie() //метод отрисовки зомби си
 	int x = 0;
 	int y = (cell_size / 2) - (cell_size % 2 == 0);
 	cout << rightCUP(x) << downCUP(y);
+	cout << SGR((int)Color::GREEN_BG);
 	cout << "\U0001F9DF";
 	//cout << leftCUP((cell_size - 2) * 2) << upCUP((cell_size / 2) - (cell_size % 2 == 0));
 	cout << upCUP((cell_size / 2) - (cell_size % 2 == 0));
@@ -191,9 +192,10 @@ void Graphics_Esc::draw_plant() //метод отрисовки растения
 	
 	int x = cell_size / 2 + (cell_size % 2 == 0) ;
 	int y = (cell_size / 2) - (cell_size % 2 == 0);
-	cout << rightCUP(x) << downCUP(y);
+	cout << rightCUP(x-1) << downCUP(y);
 	cout << SGR((int)Color::GREEN_BG);
 	cout << "\U0001F33C";
+	cout << rightCUP(1);
 }
 
 void Graphics_Esc::draw_bullet() //метод отрисовки зомби символами
@@ -204,7 +206,8 @@ void Graphics_Esc::draw_bullet() //метод отрисовки зомби си
 	int x = 0;
 	int y = (cell_size / 2) - (cell_size % 2 == 0);
 	cout << rightCUP(x) << downCUP(y);
-	cout << ".";
+	cout << SGR((int)Color::GREEN_BG);
+	cout << "\U0001F538";
 	//cout << leftCUP((cell_size - 2) * 2) << upCUP((cell_size / 2) - (cell_size % 2 == 0));
 	//cout << upCUP((cell_size / 2) - (cell_size % 2 == 0));
 }

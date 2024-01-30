@@ -48,10 +48,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/cmake/1359/bin/cmake
+CMAKE_COMMAND = /snap/cmake/1361/bin/cmake
 
 # The command to remove a file.
-RM = /snap/cmake/1359/bin/cmake -E rm -f
+RM = /snap/cmake/1361/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/dilyara/Project/build
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
-	/snap/cmake/1345/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/cmake/1361/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/snap/cmake/1359/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/cmake/1361/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -273,6 +273,78 @@ src/keyboard.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/keyboard.cpp.s
 .PHONY : src/keyboard.cpp.s
 
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+src/objects.o: src/objects.cpp.o
+.PHONY : src/objects.o
+
+# target to build an object file
+src/objects.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/objects.cpp.o
+.PHONY : src/objects.cpp.o
+
+src/objects.i: src/objects.cpp.i
+.PHONY : src/objects.i
+
+# target to preprocess a source file
+src/objects.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/objects.cpp.i
+.PHONY : src/objects.cpp.i
+
+src/objects.s: src/objects.cpp.s
+.PHONY : src/objects.s
+
+# target to generate assembly for a file
+src/objects.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/objects.cpp.s
+.PHONY : src/objects.cpp.s
+
+src/rules.o: src/rules.cpp.o
+.PHONY : src/rules.o
+
+# target to build an object file
+src/rules.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/rules.cpp.o
+.PHONY : src/rules.cpp.o
+
+src/rules.i: src/rules.cpp.i
+.PHONY : src/rules.i
+
+# target to preprocess a source file
+src/rules.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/rules.cpp.i
+.PHONY : src/rules.cpp.i
+
+src/rules.s: src/rules.cpp.s
+.PHONY : src/rules.s
+
+# target to generate assembly for a file
+src/rules.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Project.dir/build.make CMakeFiles/Project.dir/src/rules.cpp.s
+.PHONY : src/rules.cpp.s
+
 src/settings.o: src/settings.cpp.o
 .PHONY : src/settings.o
 
@@ -324,6 +396,15 @@ help:
 	@echo "... src/keyboard.o"
 	@echo "... src/keyboard.i"
 	@echo "... src/keyboard.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/objects.o"
+	@echo "... src/objects.i"
+	@echo "... src/objects.s"
+	@echo "... src/rules.o"
+	@echo "... src/rules.i"
+	@echo "... src/rules.s"
 	@echo "... src/settings.o"
 	@echo "... src/settings.i"
 	@echo "... src/settings.s"

@@ -25,12 +25,28 @@ void Field_View::print()
 	{
 		for (int j = 0; j < _length; j++)
 		{
-			cout << CUP(i * size - (i > 1)*(i-1), j * size * 2 - (j > 1)*(j-1) - j); //перемещаем курсор туда, где нужно отрисовать клетку
+			cout << CUP(i * size + (i != 0), j * size * 2 + (j != 0)); //перемещаем курсор туда, где нужно отрисовать клетку
 			color = _graphics->get_border();
 			cout << SGR((int)color);
 			_graphics->draw(Cell::empty, color); //отрисовываем клеточку
+			if (j != _length - 1)
+			{
+				for (int k = 0; k < size + 1; k++)
+				{
+					if (i != _width - 1 or k != size)
+					{
+						cout << CUP(i * size + (i != 0) + k, j * size * 2 + size * 2 - 1);
+						cout << "  ";
+					}
+					if (_width == 1)
+					{
+						cout << CUP(i * size + (i != 0) + k, j * size * 2 + size * 2 - 1);
+						cout << "  ";
+					}
+				}
 			cout << SGR((int)Color::RESET); 
 			color = Color::RESET;
+			}
 		}
 	}
 	cout << CUP(0,0);
@@ -52,19 +68,19 @@ void Field_View::right(int term_width, User_coord* u_coord)
 	
 	if (_x < term_width and _x < field_m -> getLength() - 1)
 		{
-			cout << CUP(_y * cell_size - (_y > 1)*(_y-1), _x * 2 * cell_size - (_x > 1)*(_x-1)-_x);
+			cout << CUP(_y * cell_size + 1, _x * 2 * cell_size + 1);
 			Cell obj = _field[_x][_y]; //что в данной клетке
 			color = _graphics->get_border();;
 			cout << SGR((int)color);//убрать эффект с клетки, в которой мы находимся
 			paint_cell(obj, color); //перекрасить клетку
 			u_coord->x += 1;
 			_x += 1;
-			cout << CUP(_y * cell_size - (_y > 1)*(_y-1), _x * 2 * cell_size- (_x > 1)*(_x-1)-_x);
+			cout << CUP(_y * cell_size + 1, _x * 2 * cell_size + 1);
 			obj = _field[_x][_y]; //что в данной клетке
 			color = _graphics->get_choose();
 			cout << SGR((int)color); //поставили эффект для выбранной клетки
 			paint_cell(obj, color); //перекрасить клетку
-			cout << CUP(_y * cell_size - (_y > 1)*(_y-1), _x * 2 * cell_size- (_x > 1)*(_x-1)-_x);
+			cout << CUP(_y * cell_size + 1, _x * 2 * cell_size + 1);
 			cout << SGR((int)Color::RESET);
 		}
 	color = Color::RESET;
@@ -81,19 +97,19 @@ void Field_View::left(User_coord* u_coord)
 	
 	if (_x > 0)
 	{
-		cout << CUP(_y * cell_size - (_y > 1)*(_y-1), _x * 2 * cell_size - (_x > 1)*(_x-1) -_x);
+		cout << CUP(_y * cell_size + 1, _x * 2 * cell_size + 1);
 		Cell obj = _field[_x][_y]; //что в данной клетке
 		color = _graphics->get_border();
 		cout << SGR((int)color);//убрать эффект с клетки, в которой мы находимся
 		paint_cell(obj, color); //перекрасить клетку
 		u_coord->x -= 1;
 		_x -= 1;
-		cout << CUP(_y * cell_size - (_y > 1)*(_y-1), _x * 2 * cell_size - (_x > 1)*(_x-1)-_x);
+		cout << CUP(_y * cell_size + 1, _x * 2 * cell_size + 1);
 		obj = _field[_x][_y]; //что в данной клетке
 		color = _graphics->get_choose();
 		cout << SGR((int)color); //поставили эффект для выбранной клетки
 		paint_cell(obj, color); //перекрасить клетку
-		cout << CUP(_y * cell_size - (_y > 1)*(_y-1), _x * 2 * cell_size - (_x > 1)*(_x-1)-_x);
+		cout << CUP(_y * cell_size + 1, _x * 2 * cell_size + 1);
 	}
 	color = Color::RESET;
 	cout << SGR((int)color);
@@ -109,19 +125,19 @@ void Field_View::up(User_coord* u_coord)
 	
 	if (_y > 0)
 	{
-		cout << CUP(_y * cell_size - (_y > 1)*(_y-1), _x * 2 * cell_size - (_x > 1)*(_x-1) -_x);
+		cout << CUP(_y * cell_size + 1, _x * 2 * cell_size + 1);
 		Cell obj = _field[_x][_y]; //что в данной клетке
 		color = _graphics->get_border();
 		cout << SGR((int)color);//убрать эффект с клетки, в которой мы находимся
 		paint_cell(obj, color); //перекрасить клетку
 		u_coord->y -= 1;
 		_y -= 1;
-		cout << CUP(_y * cell_size - (_y > 1)*(_y-1), _x * 2 * cell_size - (_x > 1)*(_x-1)-_x);
+		cout << CUP(_y * cell_size + 1, _x * 2 * cell_size + 1);
 		obj = _field[_x][_y]; //что в данной клетке
 		color = _graphics->get_choose();
 		cout << SGR((int)color); //поставили эффект для выбранной клетки
 		paint_cell(obj, color); //перекрасить клетку
-		cout << CUP(_y * cell_size - (_y > 1)*(_y-1), _x * 2 * cell_size - (_x > 1)*(_x-1)-_x);
+		cout << CUP(_y * cell_size + 1, _x * 2 * cell_size + 1);
 	}
 	color = Color::RESET;
 	cout << SGR((int)color);
@@ -137,19 +153,19 @@ void Field_View::down(int term_length, User_coord* u_coord)
 	
 	if ((_y < term_length) and (_y < field_m -> getWidth() - 1))
 	{
-		cout << CUP(_y * cell_size - (_y > 1)*(_y-1), _x * 2 * cell_size - (_x > 1)*(_x-1)-_x);
+		cout << CUP(_y * cell_size + 1, _x * 2 * cell_size + 1);
 		Cell obj = _field[_x][_y]; //что в данной клетке
 		color = _graphics->get_border();
 		cout << SGR((int)color);//убрать эффект с клетки, в которой мы находимся
 		paint_cell(obj, color); //перекрасить клетку
 		u_coord->y += 1;
 		_y += 1;
-		cout << CUP(_y * cell_size - (_y > 1)*(_y-1), _x * 2 * cell_size - (_x > 1)*(_x-1)-_x);
+		cout << CUP(_y * cell_size + 1, _x * 2 * cell_size + 1);
 		obj = _field[_x][_y]; //что в данной клетке
 		color = _graphics->get_choose();
 		cout << SGR((int)color); //поставили эффект для выбранной клетки
 		paint_cell(obj, color); //перекрасить клетку
-		cout << CUP(_y * cell_size - (_y > 1)*(_y-1), _x * 2 * cell_size - (_x > 1)*(_x-1)-_x);
+		cout << CUP(_y * cell_size + 1, _x * 2 * cell_size + 1);
 	}
 	color = Color::RESET;
 	cout << SGR((int)color);
@@ -176,10 +192,43 @@ void Field_View::paint_cell(Cell obj, Color color)
 {
 	if(obj != Cell::empty)
 	{
-		_graphics -> draw(Cell::empty, color);
+		if(obj == Cell::plant)
+			_graphics -> draw(Cell::empty, color);
 		cout << upCUP(field_m->getCell_size());
 	}
-	
 	_graphics -> draw(obj, color);
 }
 
+void Field_View::choose(Cell obj)
+{
+	Color color;
+	color = _graphics->get_choose();
+	cout << SGR((int)color); 
+	paint_cell(obj, color);
+	cout << SGR((int)Color::RESET);
+	cout << leftCUP(6) << upCUP(2);
+}
+
+Color Field_View::reset()
+{
+	Color color;
+	color = _graphics->get_border();
+	cout << SGR((int)color); 
+	return color;
+}
+
+void Field_View::color()
+{
+	Color color;
+	color = _graphics->get_choose();
+	cout << SGR((int)color); 
+}
+
+Color Field_View::bg()
+{
+	cout << SGR((int)Color::RESET);
+	Color color;
+	color = _graphics->get_bg();
+	cout << SGR((int)color); 
+	return color;
+}

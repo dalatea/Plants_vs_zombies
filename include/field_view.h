@@ -19,4 +19,8 @@ public:
 	void down(int, User_coord*);
 	void left(User_coord*);
 	void Scope_Plants_Print(Settings*, User_coord*);
+	void choose(Cell);
+	Color bg();
+	Color reset();
+	void color();
 };

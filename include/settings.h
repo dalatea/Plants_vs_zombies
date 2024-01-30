@@ -2,10 +2,6 @@
 
 #include <string>
 
-extern int amount_of_zombie;//количество зомби
-extern int Plants_death ;//количество убитых растений
-extern int Zombie_death ;//количество убитых зомби 
-
 enum class Key{ //перечисление клавиш, которые используются пользователем
 	Nothing = 0,
 	Up = 87,
@@ -61,6 +57,7 @@ enum class Steps{
 	zombie_attack
 };
 
+ 
 class Settings{
 private:
 	Graphics_mode g_mode;
@@ -72,16 +69,31 @@ private:
 	int amount_of_plants;
 	std::string User_NAME;//имя пользователя
 	//int amount_of_zombie_;
+	int amount_of_zombie;//количество зомби
+	int Plants_death ;//количество убитых растений
+	int Zombie_death;//количество убитых зомби 
+	int f_width;
+	int f_length;
 public:
 	Settings();
-	Settings(Graphics_mode, int, int, int, int, std::string);
+	Settings(Graphics_mode, int, int, int, int, int, std::string, int, int, int);
 	Graphics_mode getG_mode() {return g_mode;};
+	int getPlants_death() {return Plants_death;};
+	void assignPlants_death(int pl) {Plants_death = pl;}
 	int getCell_size() {return cell_size;};
 	int getTerm_width() {return term_width;};
 	int getTerm_length() {return term_length;};
 	int getLevel() {return _level;};
 	int getScope_plants() {return Scope_plants;};
+	int getZombie_death() {return Scope_plants;};
+	int getAmount_of_plants() {return amount_of_plants;};
+	void assignAmount_of_plants(int amp) {amount_of_plants = amp;} 
+	int getAmount_of_zombie() {return amount_of_zombie;};
+	void assignAmount_of_zombie(int amz) {amount_of_zombie = amz;} 
+	void assignZombie_death(int zd) {Zombie_death = zd;} 
 	int change_scope_plants() {Scope_plants--; amount_of_plants++; return Scope_plants;};
 	std::string getUser_name() {return User_NAME;};
+	int getF_width() {return f_width;};
+	int getF_length() {return f_length;};
 	
 };

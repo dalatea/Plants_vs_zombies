@@ -14,6 +14,9 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/dilyara/Project/src/field_view.cpp" "CMakeFiles/Project.dir/src/field_view.cpp.o" "gcc" "CMakeFiles/Project.dir/src/field_view.cpp.o.d"
   "/home/dilyara/Project/src/graphics.cpp" "CMakeFiles/Project.dir/src/graphics.cpp.o" "gcc" "CMakeFiles/Project.dir/src/graphics.cpp.o.d"
   "/home/dilyara/Project/src/keyboard.cpp" "CMakeFiles/Project.dir/src/keyboard.cpp.o" "gcc" "CMakeFiles/Project.dir/src/keyboard.cpp.o.d"
+  "/home/dilyara/Project/src/main.cpp" "CMakeFiles/Project.dir/src/main.cpp.o" "gcc" "CMakeFiles/Project.dir/src/main.cpp.o.d"
+  "/home/dilyara/Project/src/objects.cpp" "CMakeFiles/Project.dir/src/objects.cpp.o" "gcc" "CMakeFiles/Project.dir/src/objects.cpp.o.d"
+  "/home/dilyara/Project/src/rules.cpp" "CMakeFiles/Project.dir/src/rules.cpp.o" "gcc" "CMakeFiles/Project.dir/src/rules.cpp.o.d"
   "/home/dilyara/Project/src/settings.cpp" "CMakeFiles/Project.dir/src/settings.cpp.o" "gcc" "CMakeFiles/Project.dir/src/settings.cpp.o.d"
   )
 

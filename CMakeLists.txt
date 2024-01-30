@@ -2,7 +2,7 @@ set(CMAKE_BUILD_TYPE Debug)
 
 cmake_minimum_required(VERSION 3.27)
 
-project(Project)
+project(PlantsVSzombies)
 
 set(CMAKE_CXX_STANDARD 17)	
 
@@ -17,5 +17,8 @@ add_executable(
 	src/field_model.cpp
 	src/field_view.cpp
 	src/control.cpp
+	src/rules.cpp
+	src/objects.cpp
+	src/main.cpp
 )
 
