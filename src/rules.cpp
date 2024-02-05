@@ -1,5 +1,5 @@
 #include "rules.h"
-
+Rules::Rules(Field_View* fv, Field_Model* fm, Settings* set) : field_view(fv), field_model(fm), _set(set){};
 void Rules::choose(User_coord & u_coord) 
 {
 	int _x = u_coord.x;
@@ -63,10 +63,36 @@ void Rules::All_Bullet_Move(std::vector <Plant>& plants, std::vector <Zombie>& z
 			mas_check.push_back(k);
 			//cout << "k1 = " << k  << " ";
 				
-			if(parametr != 0)		
-				cout << CUP(_x + 1 + parametr, _y ) << " " ;
+			if(parametr != 0)	
+			{	
+				cout << CUP(_x + 1 + parametr, _y ) ;
+				if(_set -> getG_mode() == Graphics_mode::Symbol)
+					cout << " ";
+				else 
+				{
+					cout << SGR((int)Color::GREEN_BG) ;
+					if(Test % 2 == 0)
+					{
+						cout << SGR((int)Color::DARK_GREEN); //трава
+						cout << "^"; //2 пробела
+					}
+				}
+			}
 			else
-				cout << CUP(_x + 3, _y) << " ";
+			{
+				cout << CUP(_x + 3, _y);
+				if(_set -> getG_mode() == Graphics_mode::Symbol)
+					cout << " ";
+				else 
+				{
+					cout << SGR((int)Color::GREEN_BG) ;
+					if(Test % 2 == 0)
+					{
+						cout << SGR((int)Color::DARK_GREEN); //трава
+						cout << "^"; //2 пробела
+					}
+				}
+			}
 			check = 1;
 			
 			int zhp = zombies.at(l).gethp();
@@ -172,7 +198,7 @@ void Rules::Bullet_Move(Bullet& bullet)
 	int _x = 0 , _y = 0; //отрисовка
 	bool check = false;
 	
-	int x, y, Test, parametr; //значения пули 
+	int x, y, Test, parametr, limit = 0; //значения пули 
 	x = bullet.getx();
 	y = bullet.gety();
 	Test = bullet.getTest();
@@ -184,12 +210,41 @@ void Rules::Bullet_Move(Bullet& bullet)
 	
 	cout << SGR((int)Color::RESET);
 	
-	if(Test == (cell_size - 2) * 2 + 1) //такое условие, чтобы мы находились внутри клетки
+	if(_set -> getG_mode() == Graphics_mode::Symbol)
+		limit = 1;
+	
+	if(Test == (cell_size - 2) * 2 + limit) //такое условие, чтобы мы находились внутри клетки
 	{
 		if(parametr != 0)
-			cout << CUP(_x + 2,(x  * 2 * cell_size) + Test  ) << " "; 
+		{
+			cout << CUP(_x + 2,(x  * 2 * cell_size) + Test  ) ;
+			if(_set -> getG_mode() == Graphics_mode::Symbol)
+				cout << " ";
+			else 
+			{
+				cout << SGR((int)Color::GREEN_BG) ;
+				if(Test % 2 == 0)
+				{
+					cout << SGR((int)Color::DARK_GREEN); //трава
+					cout << "^"; //2 пробела
+				}
+			}
+		}
 		else
-			cout << CUP(_x + 3, (x  * 2 * cell_size) + Test  ) << " "; 
+		{
+			cout << CUP(_x + 3, (x  * 2 * cell_size) + Test  ) ; 
+			if(_set -> getG_mode() == Graphics_mode::Symbol)
+				cout << " ";
+			else 
+			{
+				cout << SGR((int)Color::GREEN_BG) ;
+				if(Test % 2 == 0)
+				{
+					cout << SGR((int)Color::DARK_GREEN); //трава
+					cout << "^"; //2 пробела
+				}
+			}
+		}
 		x++;
 		Test = 1;
 	}
@@ -199,15 +254,47 @@ void Rules::Bullet_Move(Bullet& bullet)
 		return;
 	}
 	_y = x * 2 * cell_size + Test ;
-	if((Test + 1 == 5))
+	
+	if(_set -> getG_mode() == Graphics_mode::Symbol)
+		limit = 0;
+	else 
+		limit = 1;
+		
+	if((Test + 1 == 5 - 2 * limit))
 	{
 		if(field_model -> getField()[x][y] == Cell::plant)
 		{
-			if(parametr != 0)		
-				cout << CUP(_x + 1 + parametr, _y) << " " ;
+			if(parametr != 0)
+			{	
+				cout << CUP(_x + 1 + parametr, _y) ;
+				if(_set -> getG_mode() == Graphics_mode::Symbol)
+					cout << " ";
+				else 
+				{
+					cout << SGR((int)Color::GREEN_BG) ;
+					if(Test % 2 == 0)
+					{
+						cout << SGR((int)Color::DARK_GREEN); //трава
+						cout << "^"; //2 пробела
+					}
+				}
+			}
 			else
-				cout << CUP(_x + 3, _y ) << " ";		
-			Test ++;
+			{
+				cout << CUP(_x + 3, _y ) ;
+				if(_set -> getG_mode() == Graphics_mode::Symbol)
+					cout << " ";
+				else 
+				{
+					cout << SGR((int)Color::GREEN_BG) ;
+					if(Test % 2 == 0)
+					{
+						cout << SGR((int)Color::DARK_GREEN); //трава
+						cout << "^"; //2 пробела
+					}
+				}
+			}		
+			Test += 1 + 2 * limit;
 			check = true;
 		}
 	}
@@ -216,10 +303,39 @@ void Rules::Bullet_Move(Bullet& bullet)
 	
 	if((Test != 1) and (check == false))
 	{
-		if(parametr != 0)		
-			cout << CUP(_x + 1 + parametr, _y) << " " ;
+		if(parametr != 0)
+		{		
+			cout << CUP(_x + 1 + parametr, _y)  ;
+			if(_set -> getG_mode() == Graphics_mode::Symbol)
+				cout << " ";
+			else 
+			{
+				cout << SGR((int)Color::GREEN_BG) ;
+				if(Test % 2 == 0)
+				{
+					cout << SGR((int)Color::DARK_GREEN); //трава
+					cout << "^"; //2 пробела
+				}
+			}
+		}
 		else
-			cout << CUP(_x + 3, _y ) << " ";
+		{
+			cout << CUP(_x + 3, _y ) ;
+			if(_set -> getG_mode() == Graphics_mode::Symbol)
+			{
+				cout << " ";
+				
+			}
+			else 
+			{
+				cout << SGR((int)Color::GREEN_BG) ;
+				if(Test % 2 == 0)
+				{
+					cout << SGR((int)Color::DARK_GREEN); //трава
+					cout << "^"; //2 пробела
+				}
+			}
+		}
 	}
 	
 	cout << CUP(_x + cell_size * parametr, _y) ;
@@ -237,10 +353,15 @@ void Rules::Bullet_Move(Bullet& bullet)
 }
 int Rules::First_Search(Bullet bullet, std::vector <Zombie>& zombies)
 {
+	int limit;
+	if(_set -> getG_mode() == Graphics_mode::Symbol)
+		limit = 0;
+	else 
+		limit = 1;
 	for(int i = 0; i < zombies.size(); i++)
 	{
 		if((bullet.getx() == zombies.at(i).getx() - 1) and (bullet.gety() == zombies.at(i).gety()))
-			if(bullet.getTest() + 1 == 10 - zombies.at(i).getTest())
+			if(bullet.getTest() + 1 + limit == 10 - zombies.at(i).getTest())
 				return i;
 	}
 	return -1;
@@ -310,11 +431,11 @@ bool Rules::All_Zombie_Move(int zombie_c, std::vector <Zombie>& zombies, std::ve
 			}
 		}
 		else
-			Zombie_Move( zombies.at(k));
-		if(zombies.at(k).getx() == -1) //если дошли до конца то ломаем цикл
+			Zombie_Move(zombies.at(k));
+		if(zombies.at(k).getx() == 0) //если дошли до конца то ломаем цикл
 		{
 			procces = false;
-			break;
+			return procces;
 		}	
 			//usleep(50000);
 		
@@ -345,7 +466,7 @@ void Rules::Zombie_Move(Zombie& zombie)
 	 
 	int count = 0;
 	
-	int x, y, Test, parametr; //значения пули 
+	int x, y, Test, parametr, limit = 0; //значения пули 
 	x = zombie.getx();
 	y = zombie.gety();
 	Test = zombie.getTest();
@@ -353,30 +474,80 @@ void Rules::Zombie_Move(Zombie& zombie)
 	
 	int cell_size = _set -> getCell_size();
 	
+	if(_set -> getG_mode() == Graphics_mode::Symbol)
+		limit = 0;
+	else 
+		limit = 1;
+	
 	if(y > 0)
 		y += 1;
 	
 	_x = y * cell_size + parametr;
+	
 	
 	if(Test == (cell_size - 2) * 2 ) //такое условие, чтобы мы находились внутри клетки
 	{
 		if(parametr != 0) //ЧТОБЫ КОГДА ЗОМБИ УШЕЛ ИЗ КЛЕТКИ, ЕГО Z ПОЧИСТИЛАСЬ
 		{
 			if( y == 1) 
-				cout << CUP(_x - 3*(parametr + 1), x * 2 * cell_size - 2 - Test) << " "; 
-			
+			{
+				cout << CUP(_x - 3*(parametr + 1), x * 2 * cell_size - 2 - Test) ; 
+				if(_set -> getG_mode() == Graphics_mode::Symbol)
+					cout << " ";
+				else
+				{
+					cout << SGR((int)Color::GREEN_BG) ;
+					/*
+					if(Test % 2 == 0)
+					{
+						cout << SGR((int)Color::DARK_GREEN); //трава
+							cout << "^"; //2 пробела
+					}*/
+				}
+			}
 			else
-				cout << CUP(_x - 2 * (parametr + 1), x * 2 * cell_size - 2 - Test) << " ";
+			{
+				cout << CUP(_x - 2 * (parametr + 1), x * 2 * cell_size - 2 - Test) ;
+				if(_set -> getG_mode() == Graphics_mode::Symbol)
+					cout << " ";
+				else
+				{
+					cout << SGR((int)Color::GREEN_BG) ;
+					/*
+					if(Test % 2 == 0)
+					{
+						cout << SGR((int)Color::DARK_GREEN); //трава
+						cout << " ^"; //2 пробела
+					}*/
+				}
+			}
 			
 		}
 		else
-			cout << CUP(_x + 3, x * 2 * cell_size - 2 - Test) << " "; //ОЧИСТКА ПРЕДЫДУЩЕГО ПОЛОЖЕНИЯ
+		{
+			cout << CUP(_x + 3, x * 2 * cell_size - 2 - Test) ; //ОЧИСТКА ПРЕДЫДУЩЕГО ПОЛОЖЕНИЯ
+			
+			if(_set -> getG_mode() == Graphics_mode::Symbol)
+				cout << " ";
+			else
+			{
+				cout << SGR((int)Color::GREEN_BG) ;
+				/*
+				if(Test % 2 == 0)
+				{
+					cout << SGR((int)Color::DARK_GREEN); //трава
+					cout << "^"; //2 пробела
+				}*/
+			}
+		}
 		field_model -> getField()[x - 1][y] = Cell::empty; //прошли клетку и очищаем ее
 		x--;
 		if(x <= 0)
 			return;
-			
-		Test = 0;
+		if(_set -> getG_mode() == Graphics_mode::Escape)
+			Test = 1;
+		else 
+			Test = 0;
 		//U_field -> _field[zombie.x - 1][zombie.y] = Cell::zombie;
 	}
 	
@@ -392,14 +563,41 @@ void Rules::Zombie_Move(Zombie& zombie)
 	if(Test != 0)
 	{
 		if(parametr != 0 )
-			cout << CUP(_x - 2 * (parametr + 1), _y + 2) << " ";
+		{
+			cout << CUP(_x - 2 * (parametr + 1), _y + 2) ;
+			if(_set -> getG_mode() == Graphics_mode::Symbol)
+				cout << " ";
+			else
+			{
+				cout << SGR((int)Color::GREEN_BG) ;
+				if(Test % 2 == 0)
+				{
+					cout << SGR((int)Color::DARK_GREEN); //трава
+					cout << "^"; //2 пробела
+				}
+			}
+		}
 		else
-			cout << CUP(_x + 3, _y + 2) << " " ;
+		{
+			cout << CUP(_x + 3 , _y + 2 )  ;
+			if(_set -> getG_mode() == Graphics_mode::Symbol)
+				cout << " ";
+			else
+			{
+				cout << SGR((int)Color::GREEN_BG) ;
+				if(Test % 2 == 0)
+				{
+					cout << SGR((int)Color::DARK_GREEN); //трава
+					cout << "^"; //2 пробела
+				}
+			}
+		}
 	}
 	
-	
+	cout << SGR((int)Color::RESET) ;
 	cout << CUP(_x, _y) ; //устанавливаем курсор, чтобы правильно нарисовать зомби
-		
+	
+	
 	field_view -> paint_cell(Cell::zombie, Color::RED);
 	cout << leftCUP(6) << upCUP(2);
 	

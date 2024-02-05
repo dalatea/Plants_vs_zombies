@@ -18,7 +18,7 @@ class Rules
 	Settings* _set;
 	int zombie_count;
 public:
-	Rules(Field_View* fv, Field_Model* fm, Settings* set) : field_view(fv), field_model(fm), _set(set){};
+	Rules(Field_View* , Field_Model* , Settings* ) ;
 	//Regular function
 	void Score();
 	void assignzombie_count(int x) {zombie_count = x;};

@@ -54,7 +54,8 @@ enum class Color{//перечисление кодов цветов
 
 enum class Steps{
 	put_plants,
-	zombie_attack
+	zombie_attack,
+	game_over
 };
 
  

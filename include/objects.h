@@ -62,7 +62,7 @@ public:
 	int gety(){return _y;};
 	int assignx(int);
 	int assigny(int);
-	void Set_position(Field_Model*, std::vector <Plant>&);
+	bool Set_position(Field_Model*, std::vector <Plant>&);
 	void spawn(Cell,  Field_Model*) {};
 	//friend class Zombie;
 };
@@ -76,7 +76,7 @@ public:
 	Zombie(int HP = 5, int AT = 1) : Object(HP, AT){};
 	
 	void Move_One_Position(int, int);
-	void Set_Position(Zombie&, Field_Model*);
+	void Set_Position(Zombie&, Field_Model*, Settings*);
 	int attack(int, int);
 
 	

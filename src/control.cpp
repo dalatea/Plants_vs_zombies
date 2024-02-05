@@ -116,12 +116,15 @@ Graphics_mode Game_control::graphics()
 
 void Game_control::steps()
 {
+	bool procces;
 	switch(_step)
 	{
 		case Steps::put_plants :
 			put_plants();
 		case Steps::zombie_attack :
 			zombie_attack();
+		case Steps::game_over :
+			game_over(procces);
 	}
 }
 
@@ -174,26 +177,34 @@ void Game_control::zombie_attack()
 	
 	for(int k = 0; k < _set -> getAmount_of_zombie() ; k++) //можно в функцию перенести
 	{
-		z -> Set_Position(zombies.at(k), field_model);  // для каждого зомби определяем,то где они спавнятся, на каком y-ke
+		z -> Set_Position(zombies.at(k), field_model, _set);  // для каждого зомби определяем,то где они спавнятся, на каком y-ke
 		usleep(2000);	 		//  обязательно! иначе будут одинаковые y
 	}
-	p -> Set_position(field_model, plants); // определяем где находятся растения
-	b -> Set_position(plants, bullets); // определяем где находятся пули
-	
+	procces = p -> Set_position(field_model, plants); // определяем где находятся растения
+	if(procces != false)
+		b -> Set_position(plants, bullets); // определяем где находятся пули
 	
 	while(procces)
 	{
-	
+		
 		if(!zombies.empty())
 		{
 			if(time_count % 3 == 0)
 			{
 				procces = rules -> All_Zombie_Move(rules -> getz_c(), zombies, plants);
-				if(rules -> getz_c() < _set -> getAmount_of_zombie())//нужно вот здесь исправить условие у нас конечно зомби коунт уменьшается когда его убиваем но тогда у нас начинает работать это условие которое увеличивает зомби каунт возможно в этом проблема
+				if(rules -> getz_c() < _set -> getAmount_of_zombie())
 				{
-					cout << CUP(2,1) << rules -> getz_c();
-					int z_c = rules -> getz_c();
-					rules -> assignzombie_count(z_c + 1);
+					if((_set -> getG_mode() == Graphics_mode::Escape) && (time_count % 6 == 0))
+					{
+						int z_c = rules -> getz_c();
+						rules -> assignzombie_count(z_c + 1);
+					}
+					else if(_set -> getG_mode() == Graphics_mode::Symbol)
+					{
+						int z_c = rules -> getz_c();
+						rules -> assignzombie_count(z_c + 1);
+					}
+						
 				}
 			
 			}
@@ -218,6 +229,7 @@ void Game_control::zombie_attack()
 		time_count++;
 	}
 	
+	_step = Steps::game_over;
 	game_over(procces);
 }
 
@@ -274,12 +286,13 @@ void end(int signal)
 }*/
 void Game_control::game_over(bool procces)
 {
-	if (procces == 0) //если нажали ^C, то очистить терминал, удалить game
+	if (procces == 0)
 	{ 
 		cout << SGR((int)Color::RED) << CUP(_set ->getTerm_length() - _set ->getTerm_length()/3 - 1, 1)  << "GAME OVER. ZOMBIE WIN"; 
 	}
 	else
 		cout << SGR((int)Color::GREEN) << CUP(_set ->getTerm_length() - _set ->getTerm_length()/3 - 1, 1)  << "GAME OVER. PLANTS(YOU) WIN"; 
+	
 }
 /*
 int main()

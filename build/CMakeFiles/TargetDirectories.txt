@@ -1,3 +1,0 @@
-/home/dilyara/Project/build/CMakeFiles/Project.dir
-/home/dilyara/Project/build/CMakeFiles/edit_cache.dir
-/home/dilyara/Project/build/CMakeFiles/rebuild_cache.dir
