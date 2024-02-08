@@ -2,7 +2,7 @@
 
 Game_control::Game_control()
 {
-	ifstream in("./settings.txt");
+	ifstream in("../settings.txt");
 	if (in.is_open())
 	{
 		int level_number;
