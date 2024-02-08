@@ -17,6 +17,7 @@ Program interface is implemented in UNIX console. There are two types of graphic
 ## Installation
 ```bash
 git clone https://github.com/dalatea/Plants_vs_zombies
+mkdir -p Plants_vs_zombies/build
 cd Plants_vs_zombies/build
 cmake ..
 make
